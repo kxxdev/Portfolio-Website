@@ -1,0 +1,37 @@
+.about {
+	display: flex;
+	gap: 32px;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.about__content {
+	flex: 1 1 0;
+	min-width: 300px;
+}
+
+.about__text {
+	margin-bottom: 32px;
+	margin-top: 48px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.about__description {
+	color: #abb2bf;
+}
+
+.button {
+	display: inline-block;
+	padding: 8px 16px;
+	border: 1px solid #c778dd;
+	font-weight: 500;
+}
+
+.about__image {
+	flex: 1 1 0;
+	max-width: 340px;
+	border-bottom: 1px solid #c778dd;
+}

@@ -1,0 +1,47 @@
+.quote {
+	border: 1px solid #abb2bf;
+	position: relative;
+	margin: 0;
+}
+
+.quote::after {
+	bottom: -64px;
+	right: 16px;
+}
+
+.quote::before {
+	top: -32px;
+	left: 16px;
+}
+
+.quote::before,
+.quote::after {
+	content: '"';
+	position: absolute;
+	color: #abb2bf;
+	font-size: 64px;
+	font-weight: 700;
+	background-image: linear-gradient(#282c33, #282c33);
+	background-size: 100% 40%;
+	background-repeat: no-repeat;
+}
+
+.quote__text {
+	padding: 32px;
+	font-size: 24px;
+	font-weight: 500;
+	background-color: #282c33;
+}
+
+.quote__author::before {
+	content: "- ";
+}
+
+.quote__author {
+	position: absolute;
+	color: #abb2bf;
+	border: 1px solid #abb2bf;
+	padding: 8px;
+	right: -1px;
+	font-size: 16px;
+}
