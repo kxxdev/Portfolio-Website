@@ -2,14 +2,14 @@ import React from 'react';
 import { NavLink, SocialLink } from '../../types';
 import { handleNavClick } from '../../utils/navigation';
 import './Header.css';
+import { userInfo } from '../../data';
 
 interface HeaderProps {
   navLinks: NavLink[];
   socialLinks: SocialLink[];
-  siteName: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ navLinks, socialLinks, siteName }) => {
+const Header: React.FC<HeaderProps> = ({ navLinks, socialLinks }) => {
   return (
     <header className='header'>
       <div className='media-header'>
@@ -34,10 +34,10 @@ const Header: React.FC<HeaderProps> = ({ navLinks, socialLinks, siteName }) => {
           <a className='logo' href='/'>
             <img
               className='logo__img'
-              src='./images/logo-default.svg'
-              alt={`${siteName} logo`}
+              src={userInfo.logo}
+              alt={`${userInfo.name} logo`}
             />
-            <span className='logo__name'>{siteName}</span>
+            <span className='logo__name'>{userInfo.name}</span>
           </a>
 
           <nav className='header__links'>

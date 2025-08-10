@@ -42,6 +42,7 @@ export interface Quote {
 // Основная информация о пользователе
 export interface UserInfo {
   name: string;
+  logo: string;
   title: string;
   description: string;
   currentWork: string;

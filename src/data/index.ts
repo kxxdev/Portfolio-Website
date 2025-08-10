@@ -9,6 +9,7 @@ import {
 
 export const userInfo: UserInfo = {
   name: '8ug8ear',
+  logo: 'images/logo.svg',
   title: 'full-stack developer',
   description:
     'Практикую React, пишу Telegram ботов и еще много чего интересного',
