@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { userInfo } from '../../data';
+import { userInfo, pageContent } from '../../data';
 import './Hero.css';
 
 
@@ -78,33 +78,33 @@ const Hero: React.FC = () => {
     <section className='hero' id='hero'>
       <div className='hero__content'>
         <h1 className='hero__title'>
-          I am {userInfo.name} <span>{userInfo.title}</span>{' '}
+          {pageContent.hero.titlePrefix} {userInfo.name} <span>{userInfo.title}</span>{' '}
         </h1>
         <p className='hero__desc'>{userInfo.description}</p>
         <a
-          href='https://t.me/bugibear'
+          href={pageContent.hero.buttonLink}
           className='btn'
           target='_blank'
           rel='noopener noreferrer'
         >
-          Напиши мне =&gt;
+          {pageContent.hero.buttonText}
         </a>
       </div>
 
       <div className='hero__illustrations'>
         <img
           className='hero__logo'
-          src='./images/logo-outline.svg'
+          src={pageContent.hero.logoImage}
           alt={`${userInfo.name} logo`}
         />
         <img
           className='hero__image'
-          src='./images/my_photo.png'
-          alt='My photo'
+          src={pageContent.hero.photoImage}
+          alt={pageContent.hero.photoAlt}
         />
         <div className='hero__status'>
           <AnimatedStatusIndicator />
-          Currently working on <b>{userInfo.currentWork}</b>
+          {pageContent.hero.statusText} <b>{userInfo.currentWork}</b>
         </div>
         <DotsPattern />
       </div>

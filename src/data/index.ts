@@ -5,6 +5,7 @@ import {
   ContactInfo,
   Quote,
   UserInfo,
+  PageContent,
 } from '../types';
 
 export const userInfo: UserInfo = {
@@ -17,8 +18,8 @@ export const userInfo: UserInfo = {
   email: 'phgang@ya.ru',
   phone: '+7 (902) 443 73 32',
   aboutText: [
-    'Backend-разработчик, увлечённый решением сложных задач и созданием эффективных решений. Основной стек — Python (FastAPI) и Node.js. Имею опыт работы с SQL-базами данных и MongoDB. Работал на фрилансе, разрабатывал Telegram и Discord ботов, включая масштабные проекты — например, RPG-бот с прокачкой, квестами и боями, который помог активизировать целое комьюнити.',
-    'Быстро обучаюсь и с энтузиазмом погружаюсь в новые технологии, особенно в области искусственного интеллекта. Хочу развиваться в команде, получить опыт коллективной разработки и внести вклад в реальные проекты. Предпочитаю работу в офисе и мечтаю стать частью сильного профессионального сообщества.',
+    'Fullstack-разработчик с фокусом на Node.js и TypeScript экосистему. Специализируюсь на создании современных веб-приложений и автоматизированных решений. Основной стек — Node.js, TypeScript, JavaScript, React для фронтенда. Имею глубокий опыт разработки ботов для различных платформ с использованием Grammy.js для Telegram и Discord.js для Discord.',
+    'В портфолио — масштабные проекты автоматизации и интеграций, включая RPG-бота с полноценной игровой механикой (прокачка, квесты, бои), который стал центром активного комьюнити. Работал с различными API, включая интеграции с AI-сервисами (OpenAI), что дало ценный опыт в области применения искусственного интеллекта в реальных проектах.',
   ],
 };
 
@@ -52,7 +53,6 @@ export const skillBlocks: SkillBlock[] = [
     name: 'Languages',
     skills: [
       { name: 'JavaScript' },
-      { name: 'C#' },
       { name: 'TypeScript' },
       { name: 'Python' },
     ],
@@ -106,3 +106,37 @@ export const contactInfo: ContactInfo[] = [
     alt: 'Phone icon',
   },
 ];
+
+export const pageContent: PageContent = {
+  hero: {
+    titlePrefix: 'I am',
+    buttonText: 'Напиши мне =>',
+    buttonLink: 'https://t.me/bugibear',
+    logoImage: './images/logo-outline.svg',
+    photoImage: './images/my_photo.png',
+    photoAlt: 'My photo',
+    statusText: 'Currently working on',
+  },
+  about: {
+    title: 'about',
+    photoImage: './images/my_photo2.png',
+    photoAlt: '8ug8ear',
+  },
+  contacts: {
+    title: 'contacts',
+    description:
+      'Если вам что-то интересно или возникли вопросы, не стесняйтесь обращаться ко мне. Я всегда готов ответить на ваши запросы или просто поболтать.',
+    subtitle: 'Message me here',
+  },
+  skills: {
+    title: 'skills',
+    logoImage: './images/logo-outline.svg',
+    logoAlt: '8ug8ear logo',
+  },
+  footer: {
+    description: 'Full-stack developer in Russia',
+    mediaTitle: 'Media',
+    copyrightPrefix: '© Copyright',
+    copyrightYear: '2025',
+  },
+};

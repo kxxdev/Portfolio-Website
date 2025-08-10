@@ -1,10 +1,21 @@
 import React from 'react';
 import { handleNavClick } from '../../utils/navigation';
+import { useActiveSection } from '../../hooks/useActiveSection';
 import './Header.css';
 import { userInfo, navLinks, socialLinks } from '../../data';
 
-
 const Header: React.FC = () => {
+  const activeSection = useActiveSection(['hero', 'skills', 'about', 'contacts']);
+
+  // Функция для определения активной ссылки
+  const isLinkActive = (href: string) => {
+    if (href === '/') {
+      return activeSection === 'hero' || activeSection === '';
+    }
+    const sectionName = href.replace('#', '');
+    return activeSection === sectionName;
+  };
+
   return (
     <header className='header'>
       <div className='media-header'>
@@ -40,7 +51,7 @@ const Header: React.FC = () => {
               <a
                 key={index}
                 className={`header__link ${
-                  link.isActive ? 'header__link__active' : ''
+                  isLinkActive(link.href) ? 'header__link__active' : ''
                 }`}
                 href={link.href}
                 onClick={(e) => handleNavClick(link.href, e)}
