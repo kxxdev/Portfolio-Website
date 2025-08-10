@@ -1,15 +1,10 @@
 import React from 'react';
-import { NavLink, SocialLink } from '../../types';
 import { handleNavClick } from '../../utils/navigation';
 import './Header.css';
-import { userInfo } from '../../data';
+import { userInfo, navLinks, socialLinks } from '../../data';
 
-interface HeaderProps {
-  navLinks: NavLink[];
-  socialLinks: SocialLink[];
-}
 
-const Header: React.FC<HeaderProps> = ({ navLinks, socialLinks }) => {
+const Header: React.FC = () => {
   return (
     <header className='header'>
       <div className='media-header'>
