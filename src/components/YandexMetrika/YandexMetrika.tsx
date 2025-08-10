@@ -13,10 +13,10 @@ declare global {
 const YandexMetrika: React.FC<YandexMetrikaProps> = ({ counterId }) => {
   useEffect(() => {
     // Создаем скрипт для Яндекс.Метрики
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.innerHTML = `
+    const counterScript = document.createElement('script');
+    counterScript.type = 'text/javascript';
+    counterScript.async = true;
+    counterScript.innerHTML = `
 			(function(m,e,t,r,i,k,a){
 					m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 					m[i].l=1*new Date();
@@ -27,7 +27,7 @@ const YandexMetrika: React.FC<YandexMetrikaProps> = ({ counterId }) => {
 				ym(${counterId}, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
     `;
 
-    document.head.appendChild(script);
+    document.head.appendChild(counterScript);
 
     // Создаем noscript для случаев, когда JS отключен
     const noscript = document.createElement('noscript');
@@ -36,10 +36,25 @@ const YandexMetrika: React.FC<YandexMetrikaProps> = ({ counterId }) => {
     `;
     document.body.appendChild(noscript);
 
+    // Подключаем вариокуб.
+    const variocubScript = document.createElement('script');
+    variocubScript.type = 'text/javascript';
+    variocubScript.async = true;
+    variocubScript.innerHTML = `
+      (function(e, x, pe, r, i, me, nt){
+      e[i]=e[i]||function(){(e[i].a=e[i].a||[]).push(arguments)},
+      me=x.createElement(pe),me.async=1,me.src=r,nt=x.getElementsByTagName(pe)[0],me.addEventListener('error',function(){function cb(t){t=t[t.length-1],'function'==typeof t&&t({flags:{}})};Array.isArray(e[i].a)&&e[i].a.forEach(cb);e[i]=function(){cb(arguments)}}),nt.parentNode.insertBefore(me,nt)})
+      (window, document, 'script', 'https://abt.s3.yandex.net/expjs/latest/exp.js', 'ymab');
+      ymab('metrika.${counterId}', 'init'/*, {clientFeatures}, {callback}*/);
+    `;
+
+    document.head.appendChild(variocubScript);
+
     // Очистка при размонтировании компонента
     return () => {
-      document.head.removeChild(script);
+      document.head.removeChild(counterScript);
       document.body.removeChild(noscript);
+      document.head.removeChild(variocubScript);
     };
   }, [counterId]);
 
