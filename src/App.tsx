@@ -23,11 +23,7 @@ const App: React.FC = () => {
     <div className='App'>
       <YandexMetrika counterId={config.yandexMetrikaId} />
 
-      <Header
-        navLinks={navLinks}
-        socialLinks={socialLinks}
-        siteName={userInfo.name}
-      />
+      <Header navLinks={navLinks} socialLinks={socialLinks} />
 
       <main className='container content'>
         <Hero userInfo={userInfo} />
