@@ -7,12 +7,14 @@ import About from './components/About';
 import Contacts from './components/Contacts';
 import Footer from './components/Footer';
 import YandexMetrika from './components/YandexMetrika';
+import ConsoleGreeting from './components/ConsoleGreeting';
 import './App.css';
 
 const App: React.FC = () => {
   return (
     <div className='App'>
       <YandexMetrika />
+      <ConsoleGreeting />
 
       <Header />
 
