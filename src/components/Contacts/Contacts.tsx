@@ -1,21 +1,19 @@
 import React from 'react';
-import { contactInfo } from '../../data';
+import { contactInfo, pageContent } from '../../data';
 import './Contacts.css';
 
 
 const Contacts: React.FC = () => {
   return (
     <section className='contacts' id='contacts'>
-      <h2 className='h2'>contacts</h2>
+      <h2 className='h2'>{pageContent.contacts.title}</h2>
       <div className='contacts__content'>
         <p className='contacts__description'>
-          Если вам что-то интересно или возникли вопросы, не стесняйтесь
-          обращаться ко мне. Я всегда готов ответить на ваши запросы или просто
-          поболтать.
+          {pageContent.contacts.description}
         </p>
 
         <div className='contacts__media'>
-          <h3 className='contacts__title'>Message me here</h3>
+          <h3 className='contacts__title'>{pageContent.contacts.subtitle}</h3>
           <div className='contacts__list'>
             {contactInfo.map((contact, index) => (
               <a

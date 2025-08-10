@@ -5,6 +5,7 @@ import {
   ContactInfo,
   Quote,
   UserInfo,
+  PageContent,
 } from '../types';
 
 export const userInfo: UserInfo = {
@@ -106,3 +107,37 @@ export const contactInfo: ContactInfo[] = [
     alt: 'Phone icon',
   },
 ];
+
+export const pageContent: PageContent = {
+  hero: {
+    titlePrefix: 'I am',
+    buttonText: 'Напиши мне =>',
+    buttonLink: 'https://t.me/bugibear',
+    logoImage: './images/logo-outline.svg',
+    photoImage: './images/my_photo.png',
+    photoAlt: 'My photo',
+    statusText: 'Currently working on',
+  },
+  about: {
+    title: 'about',
+    photoImage: './images/my_photo2.png',
+    photoAlt: '8ug8ear',
+  },
+  contacts: {
+    title: 'contacts',
+    description:
+      'Если вам что-то интересно или возникли вопросы, не стесняйтесь обращаться ко мне. Я всегда готов ответить на ваши запросы или просто поболтать.',
+    subtitle: 'Message me here',
+  },
+  skills: {
+    title: 'skills',
+    logoImage: './images/logo-outline.svg',
+    logoAlt: '8ug8ear logo',
+  },
+  footer: {
+    description: 'Full-stack developer in Russia',
+    mediaTitle: 'Media',
+    copyrightPrefix: '© Copyright',
+    copyrightYear: '2025',
+  },
+};

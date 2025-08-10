@@ -1,5 +1,5 @@
 import React from 'react';
-import { userInfo, socialLinks } from '../../data';
+import { userInfo, socialLinks, pageContent } from '../../data';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -19,12 +19,12 @@ const Footer: React.FC = () => {
             </div>
 
             <p className='footer__description'>
-              Full-stack developer in Russia
+              {pageContent.footer.description}
             </p>
           </div>
 
           <div className='footer__media'>
-            <div className='footer__title'>Media</div>
+            <div className='footer__title'>{pageContent.footer.mediaTitle}</div>
             <div className='footer__list'>
               {socialLinks.map((link, index) => (
                 <a
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className='footer__copyright'>
-          © Copyright 2023. Made by {userInfo.name}
+          {pageContent.footer.copyrightPrefix} {pageContent.footer.copyrightYear}. Made by {userInfo.name}
         </div>
       </div>
     </footer>

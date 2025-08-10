@@ -1,6 +1,6 @@
 import React from 'react';
 import { SkillBlock as SkillBlockType } from '../../types';
-import { skillBlocks } from '../../data';
+import { skillBlocks, pageContent } from '../../data';
 import './Skills.css';
 
 
@@ -47,8 +47,8 @@ const Illustrations: React.FC = () => {
   return (
     <div className='illustrations'>
       <img
-        src='./images/logo-outline.svg'
-        alt='8ug8ear logo'
+        src={pageContent.skills.logoImage}
+        alt={pageContent.skills.logoAlt}
         className='illustrations__logo'
       />
       <DotsPattern1 />
@@ -60,7 +60,7 @@ const Illustrations: React.FC = () => {
 const Skills: React.FC = () => {
   return (
     <section className='skills' id='skills'>
-      <h2 className='h2'>skills</h2>
+      <h2 className='h2'>{pageContent.skills.title}</h2>
       <div className='skills__content'>
         <Illustrations />
         <div className='skills__list'>

@@ -50,3 +50,37 @@ export interface UserInfo {
   phone: string;
   aboutText: string[];
 }
+
+// Контент страниц
+export interface PageContent {
+  hero: {
+    titlePrefix: string;
+    buttonText: string;
+    buttonLink: string;
+    logoImage: string;
+    photoImage: string;
+    photoAlt: string;
+    statusText: string;
+  };
+  about: {
+    title: string;
+    photoImage: string;
+    photoAlt: string;
+  };
+  contacts: {
+    title: string;
+    description: string;
+    subtitle: string;
+  };
+  skills: {
+    title: string;
+    logoImage: string;
+    logoAlt: string;
+  };
+  footer: {
+    description: string;
+    mediaTitle: string;
+    copyrightPrefix: string;
+    copyrightYear: string;
+  };
+}
