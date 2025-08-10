@@ -7,33 +7,24 @@ import About from './components/About';
 import Contacts from './components/Contacts';
 import Footer from './components/Footer';
 import YandexMetrika from './components/YandexMetrika';
-import {
-  userInfo,
-  socialLinks,
-  navLinks,
-  quote,
-  skillBlocks,
-  contactInfo,
-} from './data';
-import { config } from './config';
 import './App.css';
 
 const App: React.FC = () => {
   return (
     <div className='App'>
-      <YandexMetrika counterId={config.yandexMetrikaId} />
+      <YandexMetrika />
 
-      <Header navLinks={navLinks} socialLinks={socialLinks} />
+      <Header />
 
       <main className='container content'>
-        <Hero userInfo={userInfo} />
-        <Quote quote={quote} />
-        <Skills skillBlocks={skillBlocks} />
-        <About userInfo={userInfo} />
-        <Contacts contactInfo={contactInfo} />
+        <Hero />
+        <Quote />
+        <Skills />
+        <About />
+        <Contacts />
       </main>
 
-      <Footer userInfo={userInfo} socialLinks={socialLinks} />
+      <Footer />
     </div>
   );
 };

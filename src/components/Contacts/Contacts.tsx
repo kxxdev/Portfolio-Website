@@ -1,12 +1,9 @@
 import React from 'react';
-import { ContactInfo } from '../../types';
+import { contactInfo } from '../../data';
 import './Contacts.css';
 
-interface ContactsProps {
-  contactInfo: ContactInfo[];
-}
 
-const Contacts: React.FC<ContactsProps> = ({ contactInfo }) => {
+const Contacts: React.FC = () => {
   return (
     <section className='contacts' id='contacts'>
       <h2 className='h2'>contacts</h2>

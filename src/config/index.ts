@@ -8,7 +8,7 @@ export const config = {
   // Мета информация
   meta: {
     title: '>> 8ug8ear',
-    description: 'Full-stack developer and bot developer portfolio',
+    description: 'Full-stack developer portfolio',
     keywords: 'developer, bot developer, full-stack, typescript, python, react',
   },
 };

@@ -1,12 +1,9 @@
 import React from 'react';
-import { Quote as QuoteType } from '../../types';
+import { quote } from '../../data';
 import './Quote.css';
 
-interface QuoteProps {
-  quote: QuoteType;
-}
 
-const Quote: React.FC<QuoteProps> = ({ quote }) => {
+const Quote: React.FC = () => {
   return (
     <figure className='quote'>
       <blockquote className='quote__text'>{quote.text}</blockquote>

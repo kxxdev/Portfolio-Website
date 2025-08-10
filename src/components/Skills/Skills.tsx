@@ -1,10 +1,8 @@
 import React from 'react';
 import { SkillBlock as SkillBlockType } from '../../types';
+import { skillBlocks } from '../../data';
 import './Skills.css';
 
-interface SkillsProps {
-  skillBlocks: SkillBlockType[];
-}
 
 const SkillBlock: React.FC<{ skillBlock: SkillBlockType }> = ({
   skillBlock,
@@ -59,7 +57,7 @@ const Illustrations: React.FC = () => {
   );
 };
 
-const Skills: React.FC<SkillsProps> = ({ skillBlocks }) => {
+const Skills: React.FC = () => {
   return (
     <section className='skills' id='skills'>
       <h2 className='h2'>skills</h2>

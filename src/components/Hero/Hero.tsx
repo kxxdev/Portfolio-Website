@@ -1,10 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import { UserInfo } from '../../types';
+import { userInfo } from '../../data';
 import './Hero.css';
 
-interface HeroProps {
-  userInfo: UserInfo;
-}
 
 const AnimatedStatusIndicator: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -64,7 +61,7 @@ const AnimatedStatusIndicator: React.FC = () => {
   );
 };
 
-const Hero: React.FC<HeroProps> = ({ userInfo }) => {
+const Hero: React.FC = () => {
   const DotsPattern: React.FC = () => (
     <svg width='100%' className='dots' viewBox='0 0 104 104'>
       {Array.from({ length: 25 }, (_, i) => {

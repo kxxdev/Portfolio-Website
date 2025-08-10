@@ -1,13 +1,8 @@
 import React from 'react';
-import { SocialLink, UserInfo } from '../../types';
+import { userInfo, socialLinks } from '../../data';
 import './Footer.css';
 
-interface FooterProps {
-  userInfo: UserInfo;
-  socialLinks: SocialLink[];
-}
-
-const Footer: React.FC<FooterProps> = ({ userInfo, socialLinks }) => {
+const Footer: React.FC = () => {
   return (
     <footer className='footer'>
       <div className='container'>
@@ -15,11 +10,7 @@ const Footer: React.FC<FooterProps> = ({ userInfo, socialLinks }) => {
           <div className='footer__info'>
             <div className='footer__header'>
               <div className='logo'>
-                <img
-                  src='./images/logo-default.svg'
-                  alt='logo'
-                  className='logo__img'
-                />
+                <img src={userInfo.logo} alt='logo' className='logo__img' />
                 <div className='logo__name'>{userInfo.name}</div>
               </div>
               <a className='footer__email' href={`mailto:${userInfo.email}`}>
@@ -28,7 +19,7 @@ const Footer: React.FC<FooterProps> = ({ userInfo, socialLinks }) => {
             </div>
 
             <p className='footer__description'>
-              Full-stack developer and bot developer in Russia
+              Full-stack developer in Russia
             </p>
           </div>
 

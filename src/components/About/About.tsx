@@ -1,12 +1,8 @@
 import React from 'react';
-import { UserInfo } from '../../types';
+import { userInfo } from '../../data';
 import './About.css';
 
-interface AboutProps {
-  userInfo: UserInfo;
-}
-
-const About: React.FC<AboutProps> = ({ userInfo }) => {
+const About: React.FC = () => {
   return (
     <section className='about' id='about'>
       <div className='about__content'>
@@ -22,7 +18,7 @@ const About: React.FC<AboutProps> = ({ userInfo }) => {
 
       <img
         src='./images/my_photo2.png'
-        alt='8ug8ear photo'
+        alt='8ug8ear'
         className='about__image'
       />
     </section>
