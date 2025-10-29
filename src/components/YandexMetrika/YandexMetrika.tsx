@@ -21,7 +21,7 @@ const YandexMetrika: React.FC = () => {
 					k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
 				})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=${config.yandexMetrikaId}', 'ym');
 
-				ym(${config.yandexMetrikaId}, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+				ym(${config.yandexMetrikaId}, 'init', {defer: true, ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
     `;
 
     document.head.appendChild(counterScript);
@@ -47,8 +47,19 @@ const YandexMetrika: React.FC = () => {
 
     document.head.appendChild(variocubScript);
 
+    // Отправляем hit с текущим адресом страницы
+    const sendPageHit = () => {
+      if (window.ym) {
+        window.ym(config.yandexMetrikaId, 'hit', window.location.href);
+      }
+    };
+
+    // Отправляем hit после небольшой задержки, чтобы метрика успела загрузиться
+    const hitTimeout = setTimeout(sendPageHit, 100);
+
     // Очистка при размонтировании компонента
     return () => {
+      clearTimeout(hitTimeout);
       if (counterScript.parentNode) {
         counterScript.parentNode.removeChild(counterScript);
       }
